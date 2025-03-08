@@ -1,3 +1,4 @@
+<!-- Vista de listado de equipos -->
 <?php 
 require_once __DIR__ . "/../controllers/EquipoController.php";
 
@@ -70,7 +71,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-weight: bold;
             text-align: left;
         }
-        input, select {
+        input {
+            width: calc(100% - 20px);
+            margin-top: 5px;
+            margin-right: 20px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        select {
             width: 100%;
             padding: 8px;
             margin-top: 5px;

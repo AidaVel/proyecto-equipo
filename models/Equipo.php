@@ -1,3 +1,4 @@
+<!-- Modelo de equipo -->
 <?php
     require_once __DIR__ . "/../database/Database.php";
     
@@ -39,5 +40,12 @@
             return $sentenciaPreparada->fetch(PDO::FETCH_ASSOC);
         }
 
-    }
+        public function obtenerCapitan($equipo_id) {
+                $sql = "SELECT nombre FROM jugador WHERE equipo_id = :equipo_id AND es_capitan = 1 LIMIT 1";
+                $sentenciaPreparada = $this->db->prepare($sql);
+                $sentenciaPreparada->execute(['equipo_id' => $equipo_id]); 
+                $capitan = $sentenciaPreparada->fetch(PDO::FETCH_ASSOC);
+                return $capitan ? $capitan['nombre']:null;
+            }
+        }
 ?>

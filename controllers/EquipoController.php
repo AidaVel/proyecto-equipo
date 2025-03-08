@@ -1,3 +1,4 @@
+<!-- Controlador de equipo -->
 <?php
     require_once __DIR__ . "/../models/Equipo.php";
 
@@ -28,7 +29,6 @@
             if (strtotime($datos['fecha_fundacion'])>time()){
                 $errores[] = "La fecha de fundación no puede ser en el futuro";
             }
-            var_dump($this->equipoModel->obtenerEquipoPorNombre($datos['nombre']));
             if ($this->equipoModel->obtenerEquipoPorNombre($datos['nombre']) !== false){
                 $errores[] = "Ya existe un equipo con este nombre";
             }
@@ -36,6 +36,10 @@
                 return $errores;
             }
             return $this->equipoModel->crearEquipo($datos['nombre'], $datos['ciudad'], $datos['deporte'], $datos['fecha_fundacion']);
+        }
+
+        public function listarCapitan($equipo_id) {
+            return $this->equipoModel->obtenerCapitan($equipo_id);
         }
     }
 ?>

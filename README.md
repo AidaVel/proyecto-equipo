@@ -6,7 +6,7 @@ Aplicación desarrollada con **PHP** usando **MariaDB** como base de datos.
 
 ## 📌 Especificaciones principales
 
-✅ Que se ejecute en PHP 8.1 o superior
+✅ Que se ejecute en PHP 8.1 o superior  
 ✅ Que se utilice una estructura Model-View-Controller  
 ✅ Que se utilice Orientación a Objetos  
 ✅ Que se utilice una base de datos MariaDB 10.1 o superior  
